@@ -10,7 +10,9 @@ dependencies:
 transformers:
 - angular:
     #dart_sdk: "/opt/google/dartsdk"
-    #dart_sdk: "/usr/lib/dart"
+    dart_sdk: "/usr/lib/dart"
     html_files:
       - lib/components/events/events.html
       - lib/components/event/event.html
+      - lib/components/admin/admin.html
+      - lib/components/buy/buy.html

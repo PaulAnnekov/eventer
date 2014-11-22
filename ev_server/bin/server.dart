@@ -5,7 +5,6 @@ import 'package:args/args.dart';
 import 'package:logging/logging.dart';
 import 'package:path/path.dart' as path;
 import 'package:ev_server/server.dart';
-import 'package:ev_server/utils/db_logger.dart';
 import 'package:ev_common/config_loader.dart';
 
 startServer(String environment, Uri rootPath, Map config) {

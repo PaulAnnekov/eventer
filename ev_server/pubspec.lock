@@ -59,13 +59,13 @@ packages:
     version: "0.1.7"
   ev_client:
     description:
-      path: "..\\ev_client"
+      path: "../ev_client"
       relative: true
     source: path
     version: "0.0.0"
   ev_common:
     description:
-      path: "..\\ev_common"
+      path: "../ev_common"
       relative: true
     source: path
     version: "0.0.0"

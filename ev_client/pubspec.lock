@@ -29,6 +29,10 @@ packages:
     description: collection
     source: hosted
     version: "0.9.4"
+  constrain:
+    description: constrain
+    source: hosted
+    version: "0.1.4+3"
   dart_config:
     description: dart_config
     source: hosted
@@ -37,9 +41,13 @@ packages:
     description: di
     source: hosted
     version: "3.3.2"
+  either:
+    description: either
+    source: hosted
+    version: "0.1.7"
   ev_common:
     description:
-      path: "..\\ev_common"
+      path: "../ev_common"
       relative: true
     source: path
     version: "0.0.0"
@@ -58,11 +66,15 @@ packages:
   matcher:
     description: matcher
     source: hosted
-    version: "0.11.1"
+    version: "0.10.1+1"
   observe:
     description: observe
     source: hosted
     version: "0.10.1+2"
+  option:
+    description: option
+    source: hosted
+    version: "0.3.3"
   path:
     description: path
     source: hosted
@@ -79,6 +91,10 @@ packages:
     description: pool
     source: hosted
     version: "1.0.1"
+  quiver:
+    description: quiver
+    source: hosted
+    version: "0.18.2"
   route:
     description: route
     source: hosted
