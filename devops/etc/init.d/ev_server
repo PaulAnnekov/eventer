@@ -1,0 +1,3 @@
+#!/bin/bash
+
+su - ev -c "cd /home/ev/ev_server && /usr/lib/dart/bin/pub run --no-package-symlinks server.dart &"

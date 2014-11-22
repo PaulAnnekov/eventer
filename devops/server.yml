@@ -1,0 +1,66 @@
+---
+
+- hosts: all
+  sudo: yes
+
+  tasks:
+    - name: update apt
+      apt: update_cache=yes
+
+    - name: install https transport
+      apt: pkg=apt-transport-https
+
+    - name: add dart repository key
+      apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+    - name: add repository for latest dart
+      apt_repository: repo='deb https://storage.googleapis.com/download.dartlang.org/linux/debian stable main'
+
+    - name: update apt
+      apt: update_cache=yes
+
+#    Too slow...
+#    - name: upgrade system packages
+#      apt: upgrade=yes
+
+    #- name: install rsync to copy files
+    #  apt: pkg=rsync
+
+    - name: install Dart
+      apt: pkg=dart
+
+    - name: install nginx
+      apt: pkg=nginx
+
+    - name: add nginx host
+      template: src=nginx/sites-enabled/ev dest=/etc/nginx/sites-available/ev mode=0644
+
+    - name: enable nginx host
+      file: src=/etc/nginx/sites-available/ev dest=/etc/nginx/sites-enabled/ev state=link
+
+    - name: Remove default nginx host
+      file: name=/etc/nginx/sites-available/default state=absent
+
+    - name: remove default nginx host
+      file: name=/etc/nginx/sites-enabled/default state=absent
+
+    - name: create 'ev' user
+      user: name=ev
+
+    - name: run nginx workers as 'ev'
+      replace: dest=/etc/nginx/nginx.conf regexp='www-data' replace='ev' backup=yes
+
+    - name: restart nginx
+      service: name=nginx state=restarted
+
+    - name: build client
+      shell: su - ev -c "cd /home/ev/ev_client && /usr/lib/dart/bin/pub build --no-package-symlinks"
+
+    - name: copy server startup script
+      copy: src=etc/init.d/ev_server dest=/etc/init.d/ev_server mode=0755
+
+    - name: make this script work on startup
+      shell: update-rc.d ev_server defaults
+
+    - name: run server
+      shell: /etc/init.d/ev_server

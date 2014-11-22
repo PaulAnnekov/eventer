@@ -1,0 +1,12 @@
+server {
+    listen 80;
+
+    location / {
+        root "/home/ev/ev_client/build/web";
+        try_files $uri $uri/index.html @proxy;
+    }
+        
+    location @proxy {
+        proxy_pass http://127.0.0.1:8081;
+    }
+}

@@ -1,0 +1,28 @@
+<div ng-switch="resultsLoaded">
+  <div ng-switch-when="false">
+    Loading...
+  </div>
+  <form id="buy" ng-submit="submit()" ng-switch-when="true" ng-cloak>
+    <h1 class="title">Create new event</h1>
+    <div class="name">
+      <label>Name: <input name="name" type="text" ng-model="name" required></label>
+    </div>
+    <div class="place">
+      <label>Place: <input name="place" type="text" ng-model="place" required></label>
+    </div>
+    <div class="price">
+      <label>Price: <input name="price" type="text" ng-model="price" required></label>
+    </div>
+    <div class="date">
+      <label>Date: <input name="date" type="date" ng-model="date"></label>
+    </div>
+    <div class="image">
+      <label>Banner url: <input name="banner" type="url" ng-model="banner"></label>
+    </div>
+    <div class="promo">
+      <label>Promo codes (one per line, format: "name=percents"):<br>
+        <textarea name="promo" ng-model="promo"></textarea></label>
+    </div>
+    <input type="submit" value="Create event">
+  </form>
+</div>
