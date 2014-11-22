@@ -1,0 +1,14 @@
+img {
+    cursor: pointer;
+}
+
+.title {
+    text-align: center;
+    width: 480px;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: chocolate;
+}

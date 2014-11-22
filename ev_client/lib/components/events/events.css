@@ -1,0 +1,11 @@
+#events {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: chocolate;
+}

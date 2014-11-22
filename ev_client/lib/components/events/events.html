@@ -1,0 +1,14 @@
+<h1>Events</h1>
+<div ng-switch="resultsLoaded">
+    <div ng-switch-when="false">
+        Loading...
+    </div>
+    <div id="events" ng-switch-when="true" ng-cloak>
+        <div ng-repeat="event in events">
+            <div class="name">Name: {{event.name}}</div>
+            <div class="place">Place: {{event.place}}</div>
+            <div class="date">Date: {{event.date}}</div>
+            <a ng-click="open(event)" class="link">Open event</a>
+        </div>
+    </div>
+</div>

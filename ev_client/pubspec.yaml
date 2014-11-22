@@ -1,0 +1,16 @@
+name: ev_client
+dependencies:
+  angular: ">=1.0.0 <2.0.0"
+  browser: any
+  web_components: ">=0.8.0 <0.9.0"
+  route: ">=0.4.6 <0.5.0"
+  logging: ">=0.9.2 <0.10.0"
+  ev_common:
+    path: ../ev_common
+transformers:
+- angular:
+    #dart_sdk: "/opt/google/dartsdk"
+    #dart_sdk: "/usr/lib/dart"
+    html_files:
+      - lib/components/events/events.html
+      - lib/components/event/event.html

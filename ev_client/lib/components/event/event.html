@@ -1,0 +1,14 @@
+<div ng-switch="resultsLoaded">
+  <div ng-switch-when="false">
+    Loading...
+  </div>
+  <div id="event" ng-switch-when="true" ng-cloak>
+    <div class="banner">
+      <img src="{{event.imgUrl}}" title="Banner">
+    </div>
+    <div class="title">{{event.name}}</div>
+    <div class="place">Place: {{event.place}}</div>
+    <div class="price">Price: {{event.price}}</div>
+    <a ng-click="buy()" class="link ">Buy ticket</a>
+  </div>
+</div>
