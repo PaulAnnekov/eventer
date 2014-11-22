@@ -1,0 +1,23 @@
+<div ng-switch="resultsLoaded">
+  <div ng-switch-when="false">
+    Loading...
+  </div>
+  <form id="buy" ng-submit="submit()" ng-switch-when="true" ng-cloak>
+    <h1 class="title">Buy tickets to "{{event.name}}"</h1>
+    <div class="price">Price: {{event.price}} (w/o promo codes)</div>
+    <div class="email">
+      <label>Email: <input name="email" type="email" ng-model="email" required></label>
+    </div>
+    <div class="name">
+      <label>Your name: <input name="name" type="text" ng-model="name" required></label>
+    </div>
+    <div class="card">
+      <label>Card number: <input name="card" type="text" ng-model="card" required></label>
+    </div>
+    <div class="promo">
+      <label>Promo code: <input name="promo" type="text" ng-model="promo"></label>
+    </div>
+    <input type="submit" value="Buy">
+    <div class="error">{{error}}</div>
+  </form>
+</div>
